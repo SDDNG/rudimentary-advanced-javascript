@@ -50,7 +50,7 @@ const people = [
       skills: [
         { name: 'javascript', yrsExperience: 0 },
         { name: 'html', yrsExperience: 4 },
-        { name: 'css', yrsExperience: 2 },
+        { name: 'python', yrsExperience: 2 },
       ]
     },
     {
@@ -76,3 +76,11 @@ const people = [
   const candidates = students.filter(hasStrongSkills).map(student => [student.name, student.profession]);
 
   console.log(candidates);
+
+  const pythonPresent = skill => skill.name === "python";
+
+  const hasPython = student => student.skills.filter(pythonPresent).length > 0
+
+  const pythonCandidates = students.filter(hasPython).map(student => student.name)
+
+  console.log(pythonCandidates);
